@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./CSS/proveedoresAdmin.css">
+    <title>ACME S.A.S.</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="nav_checkbox" class="nav_checkbox">
+        <label for="nav_checkbox" class="nav__toggle">
+            <img src="./Assets/menu.svg" alt="menu" class="menu">
+            <img src="./Assets/cerrar.svg" alt="cerrar" class="close">
+        </label>
+        <div class="iniciar-sesion">
+            <div class="operador">
+                <h5>Administrador</h5>
+                <h6>Admin</h6>
+            </div>
+            <a href="./index.html" class="cerrar-sesion"><img src="./Assets/user.svg" alt="iniciar-sesion" class="sesion"></a>
+        </div>
+        
+        <ul class="nav__menu">
+            <li>
+                <a href="./index.html">
+                    <h1>ACME S.A.S.</h1>
+                </a>
+            </li>
+            <li><a href="clienteAdm.html">Clientes</a></li>
+            <li><a href="proveedoresAdm.html">Proveedores</a></li>
+            <li><a href="productosAdministrador.html">Productos</a></li>
+            <li><a href="cotizacionesAdm.html">Cotizaciones</a></li>
+            <li><a href="ordentrabajoAdm.html">Ordenes de trabajo</a></li>
+            <li><a href="NuevoReporteAdmin.html">Reportes</a></li>
+            <li><a href="categoriasAdm.html">Categorías</a></li>
+        </ul>
+
+    </nav>
+
+    <section>
+        <div class="productos">
+            <div class="productos_titulo">
+                <h1>Ingresar datos del proveedor</h1>
+            </div>
+            <div class="productos_item">
+                <div class="productos_item3">
+                    <div class="input-item">
+                        <input type="text" id="identificacion" required>
+                        <div class="underline"></div>
+                        <label>Identificación</label>
+                    </div>
+                </div>
+
+                <div class="productos_item3">
+                    <div class="input-item">
+                        <input type="text" id="nombre" required>
+                        <div class="underline"></div>
+                        <label>Nombre</label>
+                    </div>
+                </div>
+
+                <div class="productos_item3">
+                    <div class="input-item">
+                        <input type="text" id="apellido" required>
+                        <div class="underline"></div>
+                        <label>Apellido</label>
+                    </div>
+                </div>
+
+                <div class="productos_item3">
+                    <div class="input-item">
+                        <input type="text" id="direccion" required>
+                        <div class="underline"></div>
+                        <label>Dirección</label>
+                    </div>
+                </div>
+
+                <div class="productos_item3">
+                    <div class="input-item">
+                        <input type="text" id="email" required>
+                        <div class="underline"></div>
+                        <label>Email</label>
+                    </div>
+                </div>
+
+                <div class="productos_item3">
+                    <div class="input-item">
+                        <input type="text" id="telefono" required>
+                        <div class="underline"></div>
+                        <label>Telefono</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="guardar" id="btn-guardar">
+                <button>Guardar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="text">
+            <h1>ACME S.A.S</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eaque voluptatum esse, nobis delectus
+                explicabo?</p>
+        </div>
+
+        <div class="redes">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384005.png" alt="Facebook">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384017.png" alt="Twitter">
+            <img src="https://image.flaticon.com/icons/png/128/733/733641.png" alt="Whatssap">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384015.png" alt="Instagram">
+
+        </div>
+    </footer>
+
+
+</body>
+<script src="JS/proveedoresAdmin.js"></script>
+<script src="./JS/gestionarSesion.js"></script>
+
+</html>

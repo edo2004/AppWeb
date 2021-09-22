@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+.nav {
+    background-color: #3498DB;
+    min-width: 80px; 
+} 
+.nav__toggle {
+    position: absolute;
+    cursor: pointer;
+    margin: 0rem 1rem;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.iniciar-sesion {
+    position: absolute;
+    margin: 1.6rem 3rem;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.cerrar-sesion {
+    cursor: pointer;
+}
+.operador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav_checkbox {
+    display: none;
+}
+.nav__toggle img {
+    width: 1.5rem;
+}
+.sesion {
+    margin-top: 0.1rem;
+    width: 1.5rem;
+}
+
+.close {
+    display: none;
+    margin-top: 1.8rem;
+    margin-left: 0.5rem;
+}
+
+.menu {
+    margin-top: 1.8rem;
+    margin-left: 0.5rem;
+}
+.nav__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-right: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.nav__menu li {
+    list-style: none;
+    display: none;
+    outline: none;
+}
+.nav__menu li:first-child {
+    font-family: 'Kaushan Script', cursive;
+    margin-left: 1rem;
+    margin-right: auto;
+    display: block;
+}
+
+.nav__menu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+.nav__menu a:hover {
+    color: white;
+    background-color: black;
+}
+.nav__menu li:first-child a:hover {
+    color: black;
+    background-color: transparent;
+}
+.nav__menu h1 {
+    margin-left: auto
+}
+
+#nav_checkbox:checked~ul.nav__menu li {
+    display: block;
+}
+
+#nav_checkbox:checked~label.nav__toggle .close {
+    display: block;
+}
+
+#nav_checkbox:checked~label.nav__toggle .menu {
+    display: none;
+}
+
+.productos {
+    background-color: rgb(235, 232, 232);
+    width: 100%;
+    height: 100%;
+    margin: 2rem auto;
+    font-size: 1rem;
+    text-align: justify;
+    padding: 1rem;
+}
+
+.productos_titulo h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
+.container-1 {
+    width: 40%;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+
+.container-1 input#search {
+    width: 100%;
+    height: 50px;
+    background: white;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    color: #63717f;
+    padding-left: 45px;
+    outline: none;
+    ;
+}
+
+.container-1 .icon {
+    position: absolute;
+    top: 50%;
+    margin-left: 15px;
+    margin-top: -7px;
+    z-index: 1;
+    color: black;
+}
+
+.container_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agregar img {
+    margin-left: 0.1rem;
+    width: 40px;
+    height: 40px;
+}
+
+.productos_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.productos_item1 {
+    background-color: #3b9ada;
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.8rem;
+    border: white solid 1px;
+    margin: 1rem 1rem;
+
+}
+.productos_item1:hover {
+    background-color: #0170b9;
+    transform: scale(1.1);
+    transition: 500ms;
+}
+.productos_item1 input {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.paginacion {
+    margin: 1rem auto;
+    width: 80%;
+    max-width: 750px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 0px 3px 1px rgb(94, 90, 90);
+    border-radius: 25px;
+    height: 40px;
+}
+
+.number-page {
+    text-align: center;
+    font-size: 20px;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.number-page:hover {
+    color: white;
+    background: black;
+}
+
+.text {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+}
+.text h1 {
+    font-family: 'Kaushan Script', cursive;
+}
+.redes {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.redes img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 3rem; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    line-height: 150%;
+    
+  }
+
+  .modal-content img{
+    margin: 1rem;
+    width: 19rem;
+    height: 25rem;
+  }
+
+  /* Modal Header */
+.modal-header {
+    padding: 10px 16px;
+    background-color: #3b9ada;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+ .datosProducto{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-top: 1rem;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1rem 5rem;
+  }
+  
+  /* The Close Button */
+.close-modal {
+    color: white;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mostrarModal {
+    display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+
+
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+@keyframes autoplay {
+    33% {
+        transform: translate3d(calc(-100% * 0), 0, 0);
+    }
+    66% {
+        transform: translate3d(calc(-100% * 1), 0, 0);
+    }
+    100% {
+        transform: translate3d(calc(-100% * 2), 0, 0);
+    }
+}
+
+@media only screen and (min-width:560px) and (max-width:1000px) {
+    .nav__toggle {
+        display: none;
+    }
+    .iniciar-sesion {
+        margin-right: 1rem;
+        right: 0;
+    }
+    .nav__menu {
+        flex-direction: row;
+        margin-right: 10rem;
+    }
+    .nav__menu li {
+        display: block;
+    }
+    .pagination-item1 {
+        left: 30%;
+    }
+    .content_item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content_item-info {
+        margin-right: 2rem;
+    }
+    .content_item1 {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #image2,
+    #image4 {
+        order: -1;
+    }
+    .productos {
+        width: 90%;
+        border-radius: 15px;
+        border: gray solid 2px;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width:1001px) {
+    .nav__toggle {
+        display: none;
+    }
+    .iniciar-sesion {
+        margin-right: 1rem;
+        right: 0;
+    }
+    .nav__menu {
+        flex-direction: row;
+        margin-right: 10rem;
+    }
+    .nav__menu li {
+        display: block;
+    }
+    .pagination-item1 {
+        left: 40%;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .content_categories {
+        margin-top: 2rem;
+        width: 48%;
+    }
+    .content_item {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content_item-info {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    .content_item1 {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #image2,
+    #image4 {
+        order: -1;
+    }
+    .productos {
+        width: 90%;
+        border-radius: 15px;
+        border: gray solid 2px;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

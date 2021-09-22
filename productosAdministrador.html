@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/productosAdministrador.css">
+    <script src="https://kit.fontawesome.com/f724b175ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <title>Productos</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="nav_checkbox" class="nav_checkbox">
+        <label for="nav_checkbox" class="nav__toggle">
+            <img src="./Assets/menu.svg" alt="menu" class="menu">
+            <img src="./Assets/cerrar.svg" alt="cerrar" class="close">
+        </label>
+        <div class="iniciar-sesion">
+            <div class="operador">
+                <h5>Administrador</h5>
+                <h6>Admin</h6>
+            </div>
+            <a href="./index.html" class="cerrar-sesion"><img src="./Assets/user.svg" alt="iniciar-sesion" class="sesion"></a>
+        </div>
+        
+        <ul class="nav__menu">
+            <li>
+                <a href="./index.html">
+                    <h1>ACME S.A.S.</h1>
+                </a>
+            </li>
+            <li><a href="clienteAdm.html">Clientes</a></li>
+            <li><a href="proveedoresAdm.html">Proveedores</a></li>
+            <li><a href="productosAdministrador.html">Productos</a></li>
+            <li><a href="cotizacionesAdm.html">Cotizaciones</a></li>
+            <li><a href="ordentrabajoAdm.html">Ordenes de trabajo</a></li>
+            <li><a href="NuevoReporteAdmin.html">Reportes</a></li>
+            <li><a href="categoriasAdm.html">Categorías</a></li>
+        </ul>
+
+    </nav>
+
+    <section>
+        <div class="productos">
+            <div class="productos_titulo">
+                <h1>Productos</h1>
+            </div>
+            <div class="container_2">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input type="text" id="buscador" placeholder="Buscar" />
+
+                </div>
+                <div class="agregar">
+                    <a href="./productosAdmin.html"><span class="fas fa-plus fa-2x"></span></a>
+                </div>
+            </div>
+
+            <div class="productos_item">
+            </div>
+
+            <template id="template-producto">
+                <div class="productos_item1">
+                    <h1 id="tituloProducto">Titulo</h1>
+                    <!--<img src="" alt="" class="img-producto" id=""> -->
+                    <input type="image" src="" alt="" id="" onclick="myf(this)" class="img-producto">
+
+                    <div class="productos_image">
+                        <img id="item-buton" class="agregar-producto" 
+                        src="https://www.flaticon.com/premium-icon/icons/svg/3114/3114793.svg" alt="plus">
+                        <img id="item-buton" class="eliminar-producto" 
+                        src="https://image.flaticon.com/icons/png/512/1214/1214428.png" alt="eliminar">
+                        <img id="item-buton" class="modificar-producto" 
+                        src="https://www.flaticon.com/premium-icon/icons/svg/2990/2990003.svg" alt="actualizar">
+                    </div>
+                </div>
+            </template>
+
+
+
+            <!-- The Modal datos-->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close-modal">&times;</span>
+                        <h2 id="nombre-producto">Producto</h2>
+                    </div>
+
+                    <div class="mostrarModal">
+                        <img src="" alt="" class="img-imagen">
+                        <div class="datosProducto" id="datosProducto">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paginacion">
+                <div class="number-page">1</div>
+                <div class="number-page">2</div>
+                <div class="number-page">3</div>
+                <div class="number-page">4</div>
+                <div class="number-page">5</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="text">
+            <h1>ACME S.A.S</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eaque voluptatum esse, nobis delectus explicabo?
+            </p>
+        </div>
+
+        <div class="redes">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384005.png" alt="Facebook">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384017.png" alt="Twitter">
+            <img src="https://image.flaticon.com/icons/png/128/733/733641.png" alt="Whatssap">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384015.png" alt="Instagram">
+
+        </div>
+    </footer>
+
+    <script src="./JS/productosAdministrador.js"></script>
+    <script src="./JS/gestionarSesion.js"></script>
+</body>
+
+</html>

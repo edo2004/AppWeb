@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f724b175ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="CSS/cotizacionesAdm.css">
+    <title>Cotizaciones</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="nav_checkbox" class="nav_checkbox">
+        <label for="nav_checkbox" class="nav__toggle">
+            <img src="./Assets/menu.svg" alt="menu" class="menu">
+            <img src="./Assets/cerrar.svg" alt="cerrar" class="close">
+        </label>
+        <div class="iniciar-sesion">
+            <div class="operador">
+                <h5>Administrador</h5>
+                <h6>Admin</h6>
+            </div>
+            <a href="./index.html" class="cerrar-sesion"><img src="./Assets/user.svg" alt="iniciar-sesion" class="sesion"></a>
+        </div>
+
+        <ul class="nav__menu">
+            <li>
+                <a href="./index.html">
+                    <h1>ACME S.A.S.</h1>
+                </a>
+            </li>
+            <li><a href="clienteAdm.html">Clientes</a></li>
+            <li><a href="proveedoresAdm.html">Proveedores</a></li>
+            <li><a href="productosAdministrador.html">Productos</a></li>
+            <li><a href="cotizacionesAdm.html">Cotizaciones</a></li>
+            <li><a href="ordentrabajoAdm.html">Ordenes de trabajo</a></li>
+            <li><a href="NuevoReporteAdmin.html">Reportes</a></li>
+            <li><a href="categoriasAdm.html">Categorías</a></li>
+        </ul>
+
+    </nav>
+
+    <section>
+        <div class="clientes">
+            <div class="clientes_titulo">
+                <h1>Cotizaciones</h1>
+            </div>
+            <div class="container_2">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input type="search" id="search" placeholder="Buscar" />
+                </div>
+                <div class="agregar">
+                    <a href="./NuevaCotizacionAdmin.html"><span class="fas fa-plus fa-2x"></span></a>
+                </div>
+            </div>
+
+            <div class="maintable">
+                <table class="tabla" id="tablaCotizaciones">
+                    <thead>
+                        <tr>
+                            <th class="col">Identificaión</th>
+                            <th>Cliente</th>
+                            <th>Nombre de Producto</th>
+                            <th>Cantidad</th>
+                            <th>Valor</th>
+                            <th>Modificar</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="producto-list">
+
+                    </tbody>
+                    <tfoot>
+                        <tr id="footer-cot">
+                            <th>Cotizaciones de los clientes!</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <template id="template-cliente">
+                <th rowspan="">17253</th>
+                <td rowspan="">Eduar</td>
+            </template>
+
+            <template id="template-producto">
+                <tr>
+                    <td id="nombre">Fresa</td>
+                    <td>5</td>
+                    <td id="total">$<span>1000</span> COP</td>
+                </tr>
+            </template>
+
+            <template id="template-total">
+                <th>12345</th>
+                <th>Total productos</th>
+                <td>10</td>
+                <td id="total">$<span>1000</span></td>
+                <td>Modificar</td>
+            </template>
+
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="text">
+            <h1>ACME S.A.S</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eaque voluptatum esse, nobis delectus explicabo?
+            </p>
+        </div>
+
+        <div class="redes">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384005.png" alt="Facebook">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384017.png" alt="Twitter">
+            <img src="https://image.flaticon.com/icons/png/128/733/733641.png" alt="Whatssap">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384015.png" alt="Instagram">
+
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="JS/cotizacionesAdm.js"></script>
+<script src="./JS/gestionarSesion.js"></script>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/clienteAdm.css">
+    <script src="https://kit.fontawesome.com/f724b175ad.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <title>Clientes</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="nav_checkbox" class="nav_checkbox">
+        <label for="nav_checkbox" class="nav__toggle">
+            <img src="./Assets/menu.svg" alt="menu" class="menu">
+            <img src="./Assets/cerrar.svg" alt="cerrar" class="close">
+        </label>
+        <div class="iniciar-sesion">
+            <div class="operador">
+                <h5>Operador</h5>
+                <h6>Opr</h6>
+            </div>
+            <a href="./index.html" class="cerrar-sesion"><img src="./Assets/user.svg" alt="iniciar-sesion" class="sesion"></a>
+        </div>
+
+        <ul class="nav__menu">
+            <li>
+                <a href="index.html">
+                    <h1>ACME S.A.S.</h1>
+                </a>
+            </li>
+            <li><a href="cliente.html">Clientes</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="cotizaciones.html">Cotizaciones</a></li>
+            <li><a href="ordentrabajo.html">Ordenes de trabajo</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="clientes">
+            <div class="clientes_titulo">
+                <h1>Clientes</h1>
+            </div>
+            <div class="container_2">
+                <div class="container-1">
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                    <input type="text" id="buscar" placeholder="Buscar" />
+                </div>
+
+            </div>
+
+            <div class="maintable">
+                <table class="tabla" id="tablaClientes">
+                    <thead>
+                        <tr>
+                            <th class="col">Identificación</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dirección</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Cotizaciones</th>
+                            <th>Ordenes de Trabajo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- The Modal datos-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="mostrarModal" id="datosProducto">
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="text">
+            <h1>ACME S.A.S</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eaque voluptatum esse, nobis delectus explicabo?
+            </p>
+        </div>
+
+        <div class="redes">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384005.png" alt="Facebook">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384017.png" alt="Twitter">
+            <img src="https://image.flaticon.com/icons/png/128/733/733641.png" alt="Whatssap">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384015.png" alt="Instagram">
+
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="JS/cliente.js"></script>
+<script src="./JS/gestionarSesion.js"></script>
+
+
+</html>

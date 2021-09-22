@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="./CSS/productosAdmin.css">
+    <title>ACME S.A.S.</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="nav_checkbox" class="nav_checkbox">
+        <label for="nav_checkbox" class="nav__toggle">
+            <img src="./Assets/menu.svg" alt="menu" class="menu">
+            <img src="./Assets/cerrar.svg" alt="cerrar" class="close">
+        </label>
+        <div class="iniciar-sesion">
+            <div class="operador">
+                <h5>Administrador</h5>
+                <h6>Admin</h6>
+            </div>
+            <a href="./index.html" class="cerrar-sesion"><img src="./Assets/user.svg" alt="iniciar-sesion" class="sesion"></a>
+        </div>
+        
+        <ul class="nav__menu">
+            <li>
+                <a href="./index.html">
+                    <h1>ACME S.A.S.</h1>
+                </a>
+            </li>
+            <li><a href="clienteAdm.html">Clientes</a></li>
+            <li><a href="proveedoresAdm.html">Proveedores</a></li>
+            <li><a href="productosAdministrador.html">Productos</a></li>
+            <li><a href="cotizacionesAdm.html">Cotizaciones</a></li>
+            <li><a href="ordentrabajoAdm.html">Ordenes de trabajo</a></li>
+            <li><a href="NuevoReporteAdmin.html">Reportes</a></li>
+            <li><a href="categoriasAdm.html">Categorías</a></li>
+        </ul>
+
+    </nav>
+
+
+    <section>
+        <div class="productos">
+            <div class="productos_titulo">
+                <h1>Ingresar datos del producto</h1>
+            </div>
+
+            <div class="productos_item">
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="codigo" required>
+                            <div class="underline"></div>
+                            <label>Codigo</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="nombre" required>
+                            <div class="underline"></div>
+                            <label>Nombre</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <div class="cat">
+                                <select name="cate" id="proveedor">
+        
+                                </select>
+                                <label id="title_item">Proveedor</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <div class="cat">
+                                <select name="categoría" id="cat">
+                                   
+                                </select>
+                                <label id="title_item">Categoría</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <div class="cat">
+                                <select name="ubicacion" id="ubic">
+                                    <option value="Estante">Estante</option>
+                                    <option value="Bodega">Bodega</option>
+                                </select>
+                                <label id="title_item">Ubicación</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="descripcion" required>
+                            <div class="underline"></div>
+                            <label>Descripción</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="pEntrada" required>
+                            <div class="underline"></div>
+                            <label>Precio de entrada</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="pSalida" required>
+                            <div class="underline"></div>
+                            <label>Precio de salida</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="unidad" required>
+                            <div class="underline"></div>
+                            <label>Unidad</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="presentacion" required>
+                            <div class="underline"></div>
+                            <label>Presentacion</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="cantInicial" required>
+                            <div class="underline"></div>
+                            <label>Cant. inicial</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="text" id="cantMinima" required>
+                            <div class="underline"></div>
+                            <label>Cant. minima</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="date" id="fecha" required>
+                            <div class="underline"></div>
+                            <label id="title_item">Fecha</label>
+                        </div>
+                    </div>
+
+                    <div class="productos_item3">
+                        <div class="input-item">
+                            <input type="file" name="image" id="image" class="image" required>
+                            <label id="title_item">Selecciona imagen</label>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div class="image-preview">
+                <i class="fas fa-image fa-7x"></i>
+            </div>
+
+            <div type="submit" class="guardar">
+                <button>Guardar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="text">
+            <h1>ACME S.A.S</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eaque voluptatum esse, nobis delectus explicabo?</p>
+        </div>
+
+        <div class="redes">
+            <a href="https://www.facebook.com/"><img src="https://image.flaticon.com/icons/png/128/1384/1384005.png" alt="Facebook"></a>
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384017.png" alt="Twitter">
+            <img src="https://image.flaticon.com/icons/png/128/733/733641.png" alt="Whatssap">
+            <img src="https://image.flaticon.com/icons/png/128/1384/1384015.png" alt="Instagram">
+
+        </div>
+    </footer>
+
+    <script src="./JS/productosAdmin.js"></script>
+    <script src="./JS/gestionarSesion.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+.nav {
+    background-color: #3498DB;
+    min-width: 80px; 
+} 
+.nav__toggle {
+    position: absolute;
+    cursor: pointer;
+    margin: 0rem 1rem;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.iniciar-sesion {
+    position: absolute;
+    margin: 1.6rem 3rem;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+}
+.cerrar-sesion {
+    cursor: pointer;
+}
+.operador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav_checkbox {
+    display: none;
+}
+.nav__toggle img {
+    width: 1.5rem;
+}
+.sesion {
+    margin-top: 0.1rem;
+    width: 1.5rem;
+}
+
+.close {
+    display: none;
+    margin-top: 1.8rem;
+    margin-left: 0.5rem;
+}
+
+.menu {
+    margin-top: 1.8rem;
+    margin-left: 0.5rem;
+}
+.nav__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-right: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.nav__menu li {
+    list-style: none;
+    display: none;
+    outline: none;
+}
+.nav__menu li:first-child {
+    font-family: 'Kaushan Script', cursive;
+    margin-left: 1rem;
+    margin-right: auto;
+    display: block;
+}
+
+.nav__menu a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+.nav__menu a:hover {
+    color: white;
+    background-color: black;
+}
+.nav__menu li:first-child a:hover {
+    color: black;
+    background-color: transparent;
+}
+.nav__menu h1 {
+    margin-left: auto
+}
+#nav_checkbox:checked ~ ul.nav__menu li{
+    display: block;
+}
+#nav_checkbox:checked ~ label.nav__toggle .close {
+    display: block;
+}
+#nav_checkbox:checked ~ label.nav__toggle .menu {
+    display: none;
+}
+
+
+.productos {
+    background-color: rgb(235, 232, 232);
+    width: 100%;
+    height: 100%;
+    margin: 2rem auto;
+    font-size: 1rem;
+    text-align: justify;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.productos_titulo h1 {
+    text-align: center;
+    padding: 2rem;
+}
+.productos_item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.productos_item3 {
+    width: 40%;
+    min-width: 300px;
+    padding: 30px;
+    background: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    margin: 10px;
+}
+
+.productos_item3 .input-item {
+    height: 40px;
+    width: 100%;
+}
+
+.productos_item3 .input-item input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
+    font-size: 1rem;
+}
+
+
+.input-item input:focus~label,
+.input-item input:valid~label {
+    bottom: 50px;
+    font-size: 0.9rem;
+    color: rgb(73, 73, 73);
+}
+
+.productos_item3 .input-item label {
+    position: relative;
+    bottom: 30px;
+    color: gray;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.productos_item3 .input-item .underline {
+    position: relative;
+    bottom: 2px;
+    height: 2px;
+    width: 100%;
+}
+
+.input-item .underline::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #3498DB;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.input-item input:focus~.underline::before,
+.input-item input:valid~.underline::before {
+    transform: scaleX(1);
+}
+
+.guardar button {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    background-color: gray;
+}
+
+.guardar button:hover {
+    background-color: rgb(73, 73, 73);
+    color: white;
+}
+
+.text {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+}
+.text h1 {
+    font-family: 'Kaushan Script', cursive;
+}
+.redes {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem auto;
+}
+.redes img {
+    width: 30px;
+    height: 30px;
+}
+
+@media only screen and (min-width:560px ) and (max-width:1000px){
+    .nav__toggle {
+        display: none;
+    }
+    .iniciar-sesion {
+        margin-right: 1rem;
+        right: 0;
+    }
+    .nav__menu {
+        flex-direction: row;
+        margin-right: 10rem;
+    }
+    .nav__menu li {
+        display: block;
+    }
+    .pagination-item1 {
+        left: 30%;
+    }
+    .content_item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content_item-info {
+        margin-right: 2rem;
+    }
+    .content_item1 {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #image2, #image4 {
+        order: -1;
+    }
+    .productos {
+        width: 90%;
+        border-radius: 15px;
+        border: gray solid 2px;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+
+}
+@media only screen and (min-width:1001px){
+    .nav__toggle {
+        display: none;
+    }
+    .iniciar-sesion {
+        margin-right: 1rem;
+        right: 0;
+    }
+    .nav__menu {
+        flex-direction: row;
+        margin-right: 10rem;
+    }
+    .nav__menu li {
+        display: block;
+    }
+    .pagination-item1 {
+        left: 40%;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .content_categories {
+        margin-top: 2rem;
+        width: 48%;
+    }
+    .content_item {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content_item-info {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    .content_item1 {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    #image2, #image4 {
+        order: -1;
+    }
+    .productos {
+        width: 90%;
+        border-radius: 15px;
+        border: gray solid 2px;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
