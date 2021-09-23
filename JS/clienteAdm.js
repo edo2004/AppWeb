@@ -326,16 +326,15 @@ function mostrarDatos(id, opc) {
                     pResposable = document.createElement("p");
 
 
-                pIdentificacion.innerHTML = ' Codigo: ' + x.identificacion;
+                pIdentificacion.innerHTML = ' Identificación: ' + x.identificacion;
                 pNombre.innerHTML = ' Nombre: ' + x.cliente;
-                pResposable.innerHTML = ' Responsable: ' + x.resposable;
+                pResposable.innerHTML = ' Responsable: ' + x.responsable;
                 pEstado.innerHTML = ' Estado: ' + x.estado;
 
                 x.productos.forEach(e => {
-                    aproducto = document.createElement('li');
+                    var aproducto = document.createElement('li');
                     aproducto.innerHTML = e.nombre + ' Cantidad: ' + e.cantidad + ' Precio: ' + e.precio;
                     pProducto.appendChild(aproducto);
-
                 });
 
                 datos.appendChild(pIdentificacion);

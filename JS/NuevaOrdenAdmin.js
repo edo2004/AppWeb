@@ -22,7 +22,6 @@ var localProductos = 'productos';
 var datos = localStorage.getItem(localProductos);
 let arrayProductos = {}
 
-responsable.innerHTML = "Eduar"
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductos()
 })

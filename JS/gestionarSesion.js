@@ -14,8 +14,11 @@ function cargarSession () {
     if (datos !== null) {
         sessions = JSON.parse(datos);
         administrador.innerText = sessions
-        responsable.value = sessions
+        if(typeof responsable != 'undefined') {
+            responsable.value = sessions
+        }
     }
+        
 }
 cerrarSession.addEventListener('click', function () {
     sessionStorage.removeItem(LocalSession)

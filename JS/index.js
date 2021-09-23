@@ -72,7 +72,7 @@ function cargarProductos() {
     bandera = false;
 
     datos.forEach(producto => {
-        var a = parseInt(producto.cantInicial);
+        var a = parseInt(producto.unidad);
         var b = parseInt(producto.cantMinima);
         if (a <= b) {
             console.log(producto.nombre)
@@ -93,7 +93,7 @@ const pintarProducto = producto => {
     templateProductos.querySelector('#tituloProducto').textContent = producto.nombre;
     templateProductos.querySelector('.img-producto').setAttribute("src", producto.imageUrl);
     templateProductos.querySelector('.img-producto').setAttribute("id", producto.codigo);
-    templateProductos.querySelector('#cantidad').textContent = producto.cantInicial;
+    templateProductos.querySelector('#cantidad').textContent = producto.unidad;
     templateProductos.querySelector('.agregar-producto').dataset.id = producto.codigo;
 
     const clonar = templateProductos.cloneNode(true);
