@@ -13,6 +13,7 @@ const fragment = document.createDocumentFragment();
 
 var localCotizaciones = 'cotizaciones';
 var localProductos = 'productos';
+var localStorageKeyName = 'clientes';
 var datos = localStorage.getItem(localProductos);
 let arrayProductos = {}
 
@@ -20,6 +21,7 @@ let arrayProductos = {}
 var sessionStorageKeyNameEditarCotizaciones = 'editarcotizaciones';
 
 document.addEventListener('DOMContentLoaded', () => {
+
     cargarProductos()
 })
 
@@ -32,7 +34,7 @@ function cargarProductos() {
     // localStorage.setItem(localProductos, JSON.stringify(clientes));
 
     agregarProductos.addEventListener('click', function() {
-        if (cantProductos.value.length === 0 || cantProductos.value == 0) return;
+        if (cantProductos.value.length === 0 || cantProductos.value === 0) return;
         pintarProducto(clientes)
     })
 
@@ -123,31 +125,53 @@ const mostrarTotal = () => {
 
 btnGuardar.addEventListener("click", function() {
 
-    if (identificacion.value.length === 0 || cliente.value.length === 0) return;
+    var bandera = false;
+    var cli = [];
+    var validar = localStorage.getItem(localStorageKeyName);
 
-    var cotizaciones = {
-        identificacion: identificacion.value,
-        cliente: cliente.value,
-        productos: Object.values(arrayProductos)
+    if (validar !== null) {
+        cli = JSON.parse(validar);
     }
 
-    identificacion.value = '';
-    cliente.value = '';
-    productos.value = '';
-
-    console.log(cotizaciones)
-    agregaraLocalStorage(cotizaciones);
-    removeEditar()
-    swal({
-        text: "Cotizacion agregada satisfactoriamente",
-        icon: "success",
+    cli.forEach(function(x) {
+        if (x.identificacion == identificacion.value) {
+            bandera = true;
+        }
     });
 
-    if (Object.keys(arrayProductos).length != 0) {
-        arrayProductos = {}
-        addProductos.innerHTML = ''
-        footerPro.innerHTML = `<th>Agregue productos!</th>`
+    if (bandera == true) {
 
+        if (identificacion.value.length === 0 || cliente.value.length === 0) return;
+
+        var cotizaciones = {
+            identificacion: identificacion.value,
+            cliente: cliente.value,
+            productos: Object.values(arrayProductos)
+        }
+
+        identificacion.value = '';
+        cliente.value = '';
+        productos.value = '';
+
+        console.log(cotizaciones)
+        agregaraLocalStorage(cotizaciones);
+        removeEditar()
+        swal({
+            text: "Cotizacion agregada satisfactoriamente",
+            icon: "success",
+        });
+
+        if (Object.keys(arrayProductos).length != 0) {
+            arrayProductos = {}
+            addProductos.innerHTML = ''
+            footerPro.innerHTML = `<th>Agregue productos!</th>`
+
+        }
+    } else {
+        swal({
+            text: "Error en los datos del cliente, intenta de nuevo",
+            icon: "error",
+        });
     }
 });
 

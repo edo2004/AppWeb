@@ -19,9 +19,11 @@ var sessionStorageKeyNameEditarOrdenTrabajo = 'editarordentrabajo';
 var localOrdenTabajo = 'OrdenesDeTrabajo'
 var localOrdenTabajoAlmacenar = 'ordentrabajoalmacenar';
 var localProductos = 'productos';
+var localStorageKeyName = 'clientes';
 var datos = localStorage.getItem(localProductos);
 let arrayProductos = {}
 
+responsable.innerHTML = "Eduar"
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductos()
 })
@@ -120,42 +122,101 @@ const mostrarTotal = () => {
 
 btnGuardar.addEventListener("click", function() {
 
-    if (identificacion.value.length === 0 || cliente.value.length === 0 || responsable.value.length === 0 || metodoPago.value.length === 0 || fecha.value.length === 0) return;
+    var bandera = false;
+    var cli = [];
+    var validar = localStorage.getItem(localStorageKeyName);
 
-    var ordenTrabajo = {
-        identificacion: identificacion.value,
-        cliente: cliente.value,
-        responsable: responsable.value,
-        metodoPago: metodoPago.value,
-        productos: Object.values(arrayProductos),
-        estado: estado.value,
-        fecha: fecha.value
+    if (validar !== null) {
+        cli = JSON.parse(validar);
     }
 
-    identificacion.value = '';
-    cliente.value = '';
-    responsable.value = '';
-    metodoPago.value = '';
-    productos.value = '';
-    estado.value = '';
-    fecha.value = '';
-
-    console.log(ordenTrabajo)
-    agregaraLocalStorage(ordenTrabajo);
-    almacenar(ordenTrabajo);
-    removeEditar()
-
-    swal({
-        text: "Orden de trabajo agregada satisfactoriamente",
-        icon: "success",
+    cli.forEach(function(x) {
+        if (x.identificacion == identificacion.value) {
+            bandera = true;
+        }
     });
 
-    if (Object.keys(arrayProductos).length != 0) {
-        arrayProductos = {}
-        addProductos.innerHTML = ''
-        footerPro.innerHTML = `<th>Agregue productos!</th>`
+    if (bandera == true) {
+        if (identificacion.value.length === 0 || cliente.value.length === 0 || responsable.value.length === 0 || metodoPago.value.length === 0 || fecha.value.length === 0) return;
+
+        var ordenTrabajo = {
+            identificacion: identificacion.value,
+            cliente: cliente.value,
+            responsable: responsable.value,
+            metodoPago: metodoPago.value,
+            productos: Object.values(arrayProductos),
+            estado: estado.value,
+            fecha: fecha.value
+        }
+        let a = 'Terminado';
+        let b = ordenTrabajo.estado;
+
+
+        if (a == b) {
+            restarProducto(ordenTrabajo.productos)
+        }
+
+
+        identificacion.value = '';
+        cliente.value = '';
+        responsable.value = '';
+        metodoPago.value = '';
+        productos.value = '';
+        estado.value = '';
+        fecha.value = '';
+
+
+
+        //console.log(ordenTrabajo)
+        agregaraLocalStorage(ordenTrabajo);
+        almacenar(ordenTrabajo);
+        removeEditar()
+
+        swal({
+            text: "Orden de trabajo agregada satisfactoriamente",
+            icon: "success",
+        });
+
+        if (Object.keys(arrayProductos).length != 0) {
+            arrayProductos = {}
+            addProductos.innerHTML = ''
+            footerPro.innerHTML = `<th>Agregue productos!</th>`
+        }
+    } else {
+        swal({
+            text: "Error en los datos del cliente, intenta de nuevo",
+            icon: "error",
+        });
     }
 });
+
+function restarProducto(obj) {
+    let c = obj[0].cantidad;
+
+    var productos = [];
+    var dat = localStorage.getItem(localProductos);
+
+    var bandera = false;
+    if (dat !== null) {
+        productos = JSON.parse(dat);
+    }
+
+    obj.forEach(function(x) {
+        productos.forEach(function(p, i) {
+            if (x.nombre == p.nombre) {
+
+                producto = {
+                        ...productos[i],
+                        unidad: parseInt(productos[i].unidad) - parseInt(x.cantidad)
+                    }
+                    // console.log(producto)
+                productos.splice(i, 1, producto);
+
+                localStorage.setItem(localProductos, JSON.stringify(productos));
+            }
+        })
+    })
+}
 
 function agregaraLocalStorage(obj) {
     var ordenTrabajo = [];
