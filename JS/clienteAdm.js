@@ -310,14 +310,11 @@ function mostrarDatos(id, opc) {
         var cargardatos = document.getElementById("datosProducto");
         var templateEncabezado = document.querySelector("#encabezado-productos").content
         
-
-
         if (dat !== null) {
             ordentrabajo = JSON.parse(dat);
         }
         cargardatos.innerHTML = '';
 
-        console.log(ordentrabajo)
         ordentrabajo.forEach(function(datosOrden) {
             // console.log(datosOrden)
             if (id == datosOrden.identificacion) {

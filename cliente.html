@@ -81,12 +81,52 @@
     <!-- The Modal datos-->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="nombre-persona">Eduar</h2>
+                <h2>ID: <span id="id-persona"></span></h2>
+                <span class="close-modal">&times;</span>
+            </div>
             <div class="mostrarModal" id="datosProducto">
-
+                <!-- <div class="item-producto"></div> -->
+                                        
+            </div>
             </div>
         </div>
     </div>
+
+    <template id="encabezado-productos">
+        <div class="item-producto">
+        <div class="encabezado">
+            <h4>Responsable: <span id="responsable">Eduar</span> </h4>
+            <h4>Estado: <span id="estado">Terminado</span></h4>
+            <div class="procuctos_items">
+                <h3>Productos</h3>
+            </div>
+        </div>
+        </div>
+    </template>
+
+    <template id="detalle-productos">
+        <div class="detalle-productos">
+            <div><h4 class="nombre-pro">Fresa</h4></div>
+            <div class="descrProduct">
+                <ul>
+                    <li>Cantidad: <span class="cantidad-pro">5</span></li>
+                    <li>Precio: <span class="precio-pro">3200</span></li>
+                </ul>
+            </div>
+        </div>
+    
+    </template>
+
+    <template id="encabezado-product">
+        <div class="item-producto">
+            <div class="procuctos_ite">
+                <h3>Productos</h3>
+            </div>
+        </div>
+        </div>
+    </template>
 
 
     <footer class="footer">

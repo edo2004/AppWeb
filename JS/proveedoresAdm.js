@@ -113,7 +113,7 @@ function compras(nombre) {
 
 function myf(codigo) {
     var modal = document.getElementById("myModal");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.querySelector(".close-modal");
     modal.style.display = "block";
 
     mostrarDatos(codigo);
@@ -134,6 +134,7 @@ function mostrarDatos(id) {
     var productos = [];
     var dat = localStorage.getItem(localProductosAlmacenar);
     var cargardatos = document.getElementById("datosProducto");
+    var nombrePro = document.getElementById('nombre-producto')
 
     if (dat !== null) {
         productos = JSON.parse(dat);
@@ -144,10 +145,11 @@ function mostrarDatos(id) {
 
         if (id === x.proveedor) {
 
-            var datos = document.createElement("p"),
+            nombrePro.innerText = x.proveedor;
+
+            var datos = document.createElement("div"),
                 pIdentificacion = document.createElement("p"),
                 pNombre = document.createElement("p"),
-                pProveedor = document.createElement("p"),
                 cantInicial = document.createElement("p"),
                 cantiMinima = document.createElement("p"),
                 cat = document.createElement("p"),
@@ -161,7 +163,6 @@ function mostrarDatos(id) {
 
             pIdentificacion.innerHTML = ' Codigo: ' + x.codigo;
             pNombre.innerHTML = ' Nombre: ' + x.nombre;
-            pProveedor.innerHTML = ' Proveedor: ' + x.proveedor;
             cantInicial.innerHTML = ' Cantidad Inicial: ' + x.cantInicial;
             cantiMinima.innerHTML = ' Cantidad Minima: ' + x.cantMinima;
             cat.innerHTML = ' Categoria: ' + x.cat;
@@ -175,7 +176,6 @@ function mostrarDatos(id) {
 
             datos.appendChild(pIdentificacion);
             datos.appendChild(pNombre);
-            datos.appendChild(pProveedor);
             datos.appendChild(cantInicial);
             datos.appendChild(cantiMinima);
             datos.appendChild(cat);
@@ -186,6 +186,7 @@ function mostrarDatos(id) {
             datos.appendChild(ubic);
             datos.appendChild(unidad);
             datos.appendChild(pfecha);
+            datos.classList.add("item-compra")
 
             cargardatos.appendChild(datos);
             cargardatos.className = 'mostrarModal';

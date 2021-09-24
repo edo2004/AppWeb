@@ -300,7 +300,7 @@ body {
 
 .modal-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: #fefefe;
@@ -316,27 +316,39 @@ body {
     height: 330px;
 }
 
+ /* Modal Header */
+ .modal-header {
+    padding: 10px 16px;
+    background-color: #3b9ada;
+    font-size: 1.2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
 .datosProducto {
     text-align: center;
     margin-top: 1rem;
 }
 
 
-/* The Close Button */
-
-.close {
-    color: #aaaaaa;
+ /* The Close Button */
+ .close-modal {
+    color: white;
     float: right;
-    font-size: 28px;
+    font-size: 3rem;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
+    padding-left: 2rem;
+  }
+  
+.close-modal:hover,
+.close-modal:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
+  }
+
 
 .mostrarModal {
     display: -ms-flex;
@@ -345,6 +357,11 @@ body {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+.item-compra {
+    padding: 1rem;
+    margin: 0.5rem;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 @media only screen and (min-width:560px) and (max-width:1000px) {
