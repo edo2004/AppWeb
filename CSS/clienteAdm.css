@@ -282,7 +282,7 @@ body {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    width: 80%;
+    width: 40%;
     line-height: 150%;
 }
 
@@ -295,12 +295,6 @@ body {
     display: flex;
     justify-content: space-between;
   }
-
-.datosProducto {
-    text-align: center;
-    margin-top: 1rem;
-}
-
 
 /* The Close Button */
 
@@ -319,12 +313,48 @@ body {
 }
 
 .mostrarModal {
+    width: 100%;
+    margin: 1rem 0;
+    background-color: rgba(128, 128, 128,0.5);
     display: -ms-flex;
     display: -webkit-flex;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-producto {
+    display: flex;
+    margin-top: 1rem;
+    width: 60%;
+    background-color: white;
+    justify-content: center;
+}
+.detalle-productos {
+    display: flex;
+    width: 60%;
     flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #3b9ada;
+    border-bottom: 1px solid rgb(68, 68, 68);
+
+}
+.encabezado {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.procuctos_items {
+    width: 100%;
+    border-top: 1px solid rgb(68, 68, 68);
+    display: flex;
+    justify-content: center;
+    padding: 0.3rem 0;
+}
+.descrProduct ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 @media only screen and (min-width:560px) and (max-width:1000px) {

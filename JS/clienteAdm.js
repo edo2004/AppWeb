@@ -248,7 +248,7 @@ function ordenesTrabajoCliente(id) {
 
 function myf(codigo, opc) {
     var modal = document.getElementById("myModal");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.querySelector(".close-modal")
     modal.style.display = "block";
 
     mostrarDatos(codigo, opc);
@@ -266,86 +266,81 @@ function myf(codigo, opc) {
 
 function mostrarDatos(id, opc) {
 
+    var nombreCliente = document.querySelector("#nombre-persona")
+    var idCliente = document.querySelector("#id-persona")
+    var templateDetalle = document.querySelector("#detalle-productos").content
+    var templateheader = document.querySelector("#encabezado-product").content
+    var fragment = document.createDocumentFragment();
     if (opc == 1) {
         var cotizaciones = [];
         var dat = localStorage.getItem(localCotizaciones);
         var cargardatos = document.getElementById("datosProducto");
+        
 
         if (dat !== null) {
             cotizaciones = JSON.parse(dat);
         }
         cargardatos.innerHTML = '';
 
-        cotizaciones.forEach(function(x) {
+        cotizaciones.forEach(function(datosCot) {
 
-            if (id == x.identificacion) {
-                var datos = document.createElement("p"),
-                    pIdentificacion = document.createElement("p"),
-                    pNombre = document.createElement("p"),
-                    pProducto = document.createElement("ul"),
-                    pCantidad = document.createElement("p"),
-                    pValor = document.createElement("p");
+            if (id == datosCot.identificacion) {
 
+                nombreCliente.innerHTML = datosCot.cliente
+                idCliente.innerHTML = datosCot.identificacion
 
-                pIdentificacion.innerHTML = ' Codigo: ' + x.identificacion;
-                pNombre.innerHTML = ' Nombre: ' + x.cliente;
+                const clone = templateheader.cloneNode(true)
+                fragment.appendChild(clone)
 
-                x.productos.forEach(e => {
-                    aproducto = document.createElement('li');
-                    aproducto.innerHTML = e.nombre + ' Cantidad: ' + e.cantidad + ' Precio: ' + e.precio;
-                    pProducto.appendChild(aproducto);
+                datosCot.productos.forEach(producto => {
+                    templateDetalle.querySelector(".nombre-pro").textContent = producto.nombre
+                    templateDetalle.querySelector(".cantidad-pro").textContent = producto.cantidad
+                    templateDetalle.querySelector(".precio-pro").textContent = producto.precio*producto.cantidad
 
+                    const clonar = templateDetalle.cloneNode(true)
+                    fragment.appendChild(clonar)
                 });
 
-                datos.appendChild(pIdentificacion);
-                datos.appendChild(pNombre);
-                datos.appendChild(pProducto);
-                cargardatos.appendChild(datos);
-                cargardatos.className = 'mostrarModal';
-
             }
+            cargardatos.appendChild(fragment)
         });
     } else {
         var ordentrabajo = [];
         var dat = localStorage.getItem(localOrdenTabajo);
         var cargardatos = document.getElementById("datosProducto");
+        var templateEncabezado = document.querySelector("#encabezado-productos").content
+        
+
 
         if (dat !== null) {
             ordentrabajo = JSON.parse(dat);
         }
         cargardatos.innerHTML = '';
 
-        ordentrabajo.forEach(function(x) {
+        console.log(ordentrabajo)
+        ordentrabajo.forEach(function(datosOrden) {
+            // console.log(datosOrden)
+            if (id == datosOrden.identificacion) {
+                nombreCliente.innerHTML = datosOrden.cliente
+                idCliente.innerHTML = datosOrden.identificacion
 
-            if (id == x.identificacion) {
-                var datos = document.createElement("p"),
-                    pIdentificacion = document.createElement("p"),
-                    pNombre = document.createElement("p"),
-                    pProducto = document.createElement("ul"),
-                    pEstado = document.createElement("p"),
-                    pResposable = document.createElement("p");
+                templateEncabezado.querySelector("#responsable").textContent = datosOrden.responsable
+                templateEncabezado.querySelector("#estado").textContent = datosOrden.estado
 
+                const clone = templateEncabezado.cloneNode(true)
+                fragment.appendChild(clone)
 
-                pIdentificacion.innerHTML = ' Identificación: ' + x.identificacion;
-                pNombre.innerHTML = ' Nombre: ' + x.cliente;
-                pResposable.innerHTML = ' Responsable: ' + x.responsable;
-                pEstado.innerHTML = ' Estado: ' + x.estado;
+                datosOrden.productos.forEach(producto => {
+                    templateDetalle.querySelector(".nombre-pro").textContent = producto.nombre
+                    templateDetalle.querySelector(".cantidad-pro").textContent = producto.cantidad
+                    templateDetalle.querySelector(".precio-pro").textContent = producto.precio*producto.cantidad
 
-                x.productos.forEach(e => {
-                    var aproducto = document.createElement('li');
-                    aproducto.innerHTML = e.nombre + ' Cantidad: ' + e.cantidad + ' Precio: ' + e.precio;
-                    pProducto.appendChild(aproducto);
+                    const clonar = templateDetalle.cloneNode(true)
+                    fragment.appendChild(clonar)
                 });
-
-                datos.appendChild(pIdentificacion);
-                datos.appendChild(pNombre);
-                datos.appendChild(pResposable);
-                datos.appendChild(pEstado);
-                datos.appendChild(pProducto);
-                cargardatos.appendChild(datos);
-                cargardatos.className = 'mostrarModal';
-
+                
             }
+            cargardatos.appendChild(fragment)
         });
     }
 }
